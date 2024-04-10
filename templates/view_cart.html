@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block head_inners %}
+{% endblock %}
+
+{% block main_content %}
+{% for product in produkts %}
+    <div class="card">
+        <img style="width: 150px;" src={{product[5]}} class="card-img-top" alt="somehow make default image">
+        <div class="card-body">
+        <h5 class="card-title">{{product[1]}}</h5>
+        <p class="card-text">Kategorija : {{product[2]}}</p>
+        <p class="card-text">Izmērs : {{product[4]}}</p>
+        <p class="card-text">Cena : {{product[3]}}</p>
+        <p class="card-text">Apraksts : {{product[6]}}</p>
+        <label>Skaits:</label> <br>
+        <input type="text" value="1" name="count"><br><br>
+        <a href="/delete/{{product[0]}}" class="btn btn-primary">Izņemt no groza</a>
+        </div>
+    </div>
+{% endfor %}
+<a href="/buy" class="btn btn-primary">Nopirkt</a>
+{% endblock %}

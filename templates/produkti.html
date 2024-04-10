@@ -1,0 +1,22 @@
+{% extends "layout.html" %} 
+{% block page_title %} internetveikals {% endblock %} 
+{%block head_inners %}{% endblock %} 
+{% block main_content%}
+<div class="row row-cols-3 g-1">
+    {% for product in produkts %}
+    <div class="col">
+        <div class="card">
+            <img style="width: 300px; align-self: center;" src={{product[4]}} class="card-img-top" alt="somehow make default image">
+            <div class="card-body">
+            <h5 class="card-title">{{product[0]}}</h5>
+            <!--<p class="card-text">Kategorija : {{product[1]}}</p>-->
+            <!--<p class="card-text">Izmērs : {{product[3]}}</p>-->
+            <p class="card-text">Cena : {{product[2]}} €</p>
+            <!-- <p class="card-text">Apraksts : {{product[5]}}</p>-->
+            <a href="/add_to_cart/{{product[6]}}" class="btn btn-primary">Ielikt grozā</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock%}
