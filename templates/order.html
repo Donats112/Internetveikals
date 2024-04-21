@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block head_inners %}
+{% endblock %}
+
+{% block main_content %}
+<h1>Tavi sūtījumi</h1>
+{% if orders %}
+<table class="table">
+  <tr>
+    <th>Order Date</th>
+    <th>Product Name</th>
+    <th>Quantity</th>
+    <th>Total Cost</th>
+  </tr>
+  {% for order in orders %}
+  <tr>
+    <td>{{ order[1] }}</td>
+    <td>{{order[5]}}</td>
+    <td>{{ order[3] }}</td>
+    <td>{{ order[4] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>Nav pasūtījumu</p>
+{% endif %}
+{% endblock %}

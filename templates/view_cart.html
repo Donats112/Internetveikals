@@ -4,20 +4,27 @@
 {% endblock %}
 
 {% block main_content %}
-{% for product in produkts %}
+{% if produkts %}
+<form method="POST" action="/buy">
+    {% for product in produkts %}
     <div class="card">
-        <img style="width: 150px;" src={{product[5]}} class="card-img-top" alt="somehow make default image">
+        <img style="width: 150px;" src={{product[5]}} class="card-img-top" alt="static\images\default_image.png">
         <div class="card-body">
-        <h5 class="card-title">{{product[1]}}</h5>
-        <p class="card-text">Kategorija : {{product[2]}}</p>
-        <p class="card-text">Izmērs : {{product[4]}}</p>
-        <p class="card-text">Cena : {{product[3]}}</p>
-        <p class="card-text">Apraksts : {{product[6]}}</p>
-        <label>Skaits:</label> <br>
-        <input type="text" value="1" name="count"><br><br>
-        <a href="/delete/{{product[0]}}" class="btn btn-primary">Izņemt no groza</a>
+            <h5 class="card-title">{{product[1]}}</h5>
+            <p class="card-text">Kategorija : {{product[2]}}</p>
+            <p class="card-text">Izmērs : {{product[4]}}</p>
+            <p class="card-text">Cena : {{product[3]}}</p>
+            <p class="card-text">Apraksts : {{product[6]}}</p>
+            <label>Skaits:</label> <br>
+            <!-- Ensure each count input has a unique name -->
+            <input type="text" value="1" name="count_{{ product[0] }}"><br><br>
+            <a href="/delete_from_cart/{{product[0]}}" class="btn btn-primary">Izņemt no groza</a>
         </div>
     </div>
-{% endfor %}
-<a href="/buy" class="btn btn-primary">Nopirkt</a>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Nopirkt</button>
+</form>
+{% else %}
+    <h3 style="text-align: center;">Jūsu grozs ir tukšs</h3>
+{% endif %}
 {% endblock %}

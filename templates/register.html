@@ -10,14 +10,14 @@
 
 {% block main_content %}
 <form id="register-form" action="/register" method="POST">
-    <input class="form-control" required type="text" name="username" placeholder="Username"></input>
-    <input class="form-control" required type="password" name="password" placeholder="Password" minlength="8"></input>
-    <input class="form-control" required type="password" name="password-check" placeholder="Repeat password" minlength="8"></input>
-    <input class="form-control" required type="text" name="first-name" placeholder="First name"></input>
-    <input class="form-control" required type="text" name="last-name" placeholder="Last name"></input>
-    <input class="form-control" type="text" name="e-mail" placeholder="E-mail address"></input>
-    <input class="form-control" type="text" name="phone" placeholder="Phone number"></input>
-    <input class="form-control" required type="text" name="address" placeholder="Address"></input>
-    <input style="width: 100%;" class="btn btn-primary" type="submit" value="Register"></input>
+    <input class="form-control" required type="text" name="username" placeholder="Lietotājvārds"></input>
+    <input class="form-control" required type="password" name="password" placeholder="Parole" minlength="8"></input>
+    <input class="form-control" required type="password" name="password-check" placeholder="Atkārtota parole" minlength="8"></input>
+    <input class="form-control" required type="text" name="first-name" placeholder="Vārds"></input>
+    <input class="form-control" required type="text" name="last-name" placeholder="Uzvārds"></input>
+    <input class="form-control" type="text" name="e-mail" placeholder="E-pasts"></input>
+    <input class="form-control" type="text" name="phone" placeholder="Telefona numurs"></input>
+    <input class="form-control" required type="text" name="address" placeholder="Adrese"></input>
+    <input style="width: 100%;" class="btn btn-primary" type="submit" value="Piereģistrēties"></input>
 </form>
 {% endblock %}

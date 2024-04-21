@@ -6,14 +6,21 @@
 
 .navbar > nav-item > nav-link {
     padding: 6px;
+    overflow: hidden;
 }
 
 .nav-item > a {
     color: black;
+    background-color: rgb(143, 17, 21);
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
 }
 
 .navbar {
     border-bottom: 1px solid rgba(0,0,0,.125);
+    background-color: brown;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1) inset, 0 0 10px rgba(0,0,0,0.5);
 }
 
 button.nav-link {
@@ -29,5 +36,41 @@ button.nav-link {
     }
 }
 .card {
-    background-color: lightgray;
+    background-color: brown;
+    overflow: hidden;
+    align-items: center;
+}
+
+body{
+    background-color: rgb(255, 208, 201);
+}
+
+.navbar-brand img {
+    width: 100px; /* Set the width of the logo */
+    max-height: 100px; /* Maintain the aspect ratio of the logo */
+}
+
+a{
+    text-decoration: none;
+    background-color: rgb(143, 17, 21);
+    color: black;
+}
+
+.admin_buttons{
+    box-shadow: 0 0 20px rgba(0,0,0,0.1) inset, 0 0 10px rgba(0,0,0,0.5);
+    width: 150px;
+    margin: 10px;
+    font-size: large;
+    text-decoration: none;
+    border: 2px;
+    border-radius: 5px;
+    display: block;
+}
+
+#pirkums{
+    border: 2px;
+    border-radius: 5px;
+    font-size: large;
+    width: 200px;
+    margin: 10px;
 }

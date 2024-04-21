@@ -21,17 +21,16 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if 'user_id' not in session:
-            flash('Lai apmeklētu šo lapu jums jābūt adminam! ', category='error')
+            flash('Lai apmeklētu šo lapu jums jāpieslēdzas savam profilam! ', category='error')
             return redirect(url_for('login', next=request.url))
         return f(*args, **kwargs)
     return decorated_function
 
 def admin_login_required(f):
-    print("starts")
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if 'user_id' not in session or session.get('user_role') == 0:
-            flash('Lai apmeklētu šo lapu jums jāielogojas')
+            flash('Lai apmeklētu šo lapu jums jābūt adminam!')
             return redirect(url_for('login', next=request.url))
         return f(*args, **kwargs)
     return decorated_function
