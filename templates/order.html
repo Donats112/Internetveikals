@@ -8,17 +8,17 @@
 {% if orders %}
 <table class="table">
   <tr>
-    <th>Order Date</th>
-    <th>Product Name</th>
-    <th>Quantity</th>
-    <th>Total Cost</th>
+    <th>Pasūtījuma datums</th>
+    <th>Produkts</th>
+    <th>Daudzums</th>
+    <th>Izmaksas</th>
   </tr>
   {% for order in orders %}
   <tr>
     <td>{{ order[1] }}</td>
     <td>{{order[5]}}</td>
     <td>{{ order[3] }}</td>
-    <td>{{ order[4] }}</td>
+    <td>{{ order[4] }}€</td>
   </tr>
   {% endfor %}
 </table>
